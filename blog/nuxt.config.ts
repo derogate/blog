@@ -10,6 +10,10 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     'nuxt-icon'
   ],
+  colorMode: {
+    preference: 'system',
+    fallback: 'dark',
+  },
   content: {
     documentDriven: true,
     highlight: {
