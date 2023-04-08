@@ -1,7 +1,22 @@
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
-  modules: ['@nuxt/content'],
+  extends: [
+    '@nuxt-themes/typography'
+  ],
+  modules: [
+    '@nuxt/content',
+    '@nuxtjs/tailwindcss',
+    '@nuxtjs/color-mode',
+    '@vueuse/nuxt',
+    'nuxt-icon'
+  ],
   content: {
-    documentDriven: true
+    documentDriven: true,
+    highlight: {
+      theme: {
+        dark: 'github-dark',
+        default: 'github-light'
+      }
+    }
   }
 })
