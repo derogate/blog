@@ -1,6 +1,6 @@
 <template>
   <button aria-label="Color Mode" class="flex" @click="onClick">
-    <ColorScheme placeholder="..." tag="div">
+    <ColorScheme placeholder="..." tag="div" class="w-5 h-5">
       <template v-if="colorMode.value === 'dark'">
         <Icon name="ph:moon-bold" class="w-5 h-5" />
         <span class="sr-only">Dark Mode</span>
