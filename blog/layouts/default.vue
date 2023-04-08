@@ -5,23 +5,10 @@
   </div>
 </template>
 
-<script lang="ts" setup>
+<script lang="ts" setup></script>
 
-</script>
-
-<style lang="css">
-/* 
+<style lang="postcss">
 body {
-  @apply bg-primary-50 text-black dark:bg-primary-900 dark:text-white;
-} 
-*/
-
-body {
-  background-color: #fff;
-  color: rgba(0,0,0,0.8);
-}
-.dark-mode body {
-  background-color: #091a28;
-  color: #ebf4f1;
+  @apply bg-primary-50 text-black dark:bg-primary-900 dark:text-white transition duration-200;
 }
 </style>
