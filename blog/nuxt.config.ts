@@ -1,11 +1,12 @@
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
   extends: [
-    '@nuxt-themes/typography'
+    '@nuxt-themes/elements',
+    '@nuxt-themes/typography',
   ],
   modules: [
-    '@nuxt/content',
     '@nuxtjs/tailwindcss',
+    '@nuxt/content',
     '@nuxtjs/color-mode',
     '@vueuse/nuxt',
     'nuxt-icon'
