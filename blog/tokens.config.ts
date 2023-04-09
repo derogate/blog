@@ -16,13 +16,13 @@ export default defineTheme({
       block: {
         backgroundColor: {
           initial: colors.gray['50'],
-          dark: colors.gray['900']
+          dark: colors.black
         }
       },
       inline: {
         backgroundColor: {
           initial: colors.gray['100'],
-          dark: colors.gray['900']
+          dark: colors.black
         }
       }
     },
