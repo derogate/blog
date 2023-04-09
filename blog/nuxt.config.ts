@@ -11,7 +11,7 @@ export default defineNuxtConfig({
     'nuxt-icon'
   ],
   colorMode: {
-    preference: 'system',
+    preference: 'dark',
     fallback: 'dark',
     classSuffix: ''
   },
