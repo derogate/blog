@@ -1,6 +1,6 @@
 <template>
   <div ref="navbarRef" class="flex items-center justify-between p-4 h-[60px]">
-    <div>{{ navbarRef?.clientHeight }}</div>
+    <div></div>
     <ColorModeSwitch />
   </div>
 </template>
