@@ -3,11 +3,10 @@ export default defineAppConfig({
     github: 'derogate'
   },
   prose: {
-    h1: {
-      icon: 'line-md:beer-alt-twotone-loop'
-    },
+    h1: { icon: 'material-symbols:link-rounded' },
     h2: { icon: 'material-symbols:link-rounded' },
     h3: { icon: 'material-symbols:link-rounded' },
     h4: { icon: 'material-symbols:link-rounded' },
+    h5: { icon: 'material-symbols:link-rounded' },
   }
 })

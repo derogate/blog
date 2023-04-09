@@ -25,6 +25,12 @@ export default defineTheme({
           dark: colors.gray['900']
         }
       }
+    },
+    hr: {
+      color: {
+        initial: colors.gray['300'],
+        dark: colors.gray['50']
+      }
     }
   }
 })
