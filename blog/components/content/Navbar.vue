@@ -5,8 +5,8 @@
         v-for="item in navigationLinks"
         :key="item._id"
         :to="item._path"
-        class="border-b border-b-transparent hover:border-dashed hover:border-b-teal-500 hover:text-teal-500 mt-2"
-        :class="{ 'border-solid border-b-teal-500 text-teal-500 pointer-events-none': page._path === item._path }">
+        class="border-b border-b-transparent hover:border-dashed hover:border-b-teal-500 hover:text-teal-500 transition-all duration-200 mt-2"
+        :class="{ 'border-solid border-b-teal-500 text-teal-500 font-bold pointer-events-none': page._path === item._path }">
         {{ item.title }}
       </NuxtLink>
     </div>
