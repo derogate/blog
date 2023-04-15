@@ -10,7 +10,10 @@
         {{ item.title }}
       </NuxtLink>
     </div>
-    <ColorModeSwitch />
+
+    <div class="flex items-center space-x-3 transition text-primary-500">
+      <ColorModeSwitch />
+    </div>
   </div>
 </template>
 

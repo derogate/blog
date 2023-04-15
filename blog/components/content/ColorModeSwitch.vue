@@ -1,5 +1,5 @@
 <template>
-  <button aria-label="Color Mode" class="flex" @click="onClick">
+  <button aria-label="Color Mode" class="flex transition dark:text-primary-100 hover:text-primary-700 dark:hover:text-primary-300" @click="onClick">
     <ColorScheme placeholder="..." tag="div" class="w-5 h-5">
       <template v-if="colorMode.value === 'dark'">
         <Icon name="ph:moon-bold" class="w-5 h-5" />

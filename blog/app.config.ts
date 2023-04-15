@@ -1,7 +1,4 @@
 export default defineAppConfig({
-  socials: {
-    github: 'derogate'
-  },
   prose: {
     h1: { icon: 'material-symbols:link-rounded' },
     h2: { icon: 'material-symbols:link-rounded' },
