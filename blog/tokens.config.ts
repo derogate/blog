@@ -9,6 +9,14 @@ export default defineTheme({
   typography: {
     color: {
       secondary: colors.gray
+    },
+    font: {
+      display: {
+        value: 'Verdana, var(--font-sans)'
+      },
+      body: {
+        value: 'Verdana, var(--font-sans)'
+      },
     }
   },
   prose: {

@@ -4,7 +4,9 @@
     <main class="max-w-none">
       <ClientOnly>
         <p v-if="page && !page?._empty && page?.title" class="flex flex-col">
-          <span class="text-4xl text-teal-500 font-extrabold">
+          <!-- class="text-4xl text-teal-500 font-extrabold"> -->
+          <span 
+            class="inline-block font-extrabold text-transparent text-4xl bg-clip-text bg-gradient-to-r from-teal-500 to-red-500">
             {{ page.title }}
           </span>
           <div v-if="page?.publishedOn || page?.lastUpdated" class="flex flex-col text-sm mt-5">
