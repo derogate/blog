@@ -33,6 +33,6 @@ provide('layout', 'default');
 
 <style lang="postcss">
 body {
-  @apply bg-primary-50 text-black dark:bg-black dark:text-white transition duration-200;
+  @apply bg-primary-50 text-black dark:bg-black dark:text-white transition duration-[600ms];
 }
 </style>
