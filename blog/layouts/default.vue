@@ -1,7 +1,8 @@
 <template>
   <Navbar class="max-w-2xl m-auto" />
+  
   <div class="max-w-2xl py-10 px-4 sm:px-8 m-auto bg-white dark:bg-primary-900 ring-1 ring-gray-200 dark:ring-gray-700 sm:shadow sm:rounded-lg sm:mb-[var(--navbar-height)]">
-    <main class="max-w-none">
+    <main class="relative max-w-none">
       <ClientOnly>
         <p v-if="page && !page?._empty && page?.title" class="flex flex-col w-fit">
           <span 
@@ -19,12 +20,15 @@
         </p>
       </ClientOnly>
       <slot />
+
+      <ScrollToTopButton />
     </main>
   </div>
 </template>
 
 <script lang="ts" setup>
 const { page } = useContent();
+provide('layout', 'default');
 </script>
 
 <style lang="postcss">

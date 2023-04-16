@@ -5,7 +5,7 @@
       :key="post._id"
       :to="post._path"
       class="w-fit group">
-      <span class="text-xs text-gray-600 dark:text-gray-400 group-hover:text-inherit leading-[1] mr-2">
+      <span :title="`Published on: ${post.publishedOn ?? '-'}. Last updated on: ${post.lastUpdated ?? '-'}`" class="text-xs text-gray-600 dark:text-gray-400 group-hover:text-inherit leading-[1] mr-2">
         {{ post.lastUpdated ?? post.publishedOn }}
       </span>
       <span>
