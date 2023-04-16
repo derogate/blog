@@ -30,9 +30,3 @@
 const { page } = useContent();
 provide('layout', 'default');
 </script>
-
-<style lang="postcss">
-body {
-  @apply bg-primary-50 text-black dark:bg-black dark:text-white transition ease-in-out;
-}
-</style>

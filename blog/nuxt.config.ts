@@ -11,6 +11,9 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     'nuxt-icon'
   ],
+  css: [
+    '@/assets/styles/globals.postcss'
+  ],
   colorMode: {
     preference: 'dark',
     fallback: 'dark',
