@@ -1,0 +1,76 @@
+name: Deploy to Github Pages
+run-name: ${{ github.actor }} is deploying to Github Pages
+
+on: 
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    env:
+      # root folder to be referenced in this workflow
+      working-directory: blog
+    
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        node: [latest]
+        pnpm: [latest]
+
+    runs-on: ${{ matrix.os }}
+    permissions: 
+      contents: write
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install Node
+        uses: actions/setup-node@v3
+        with: 
+          node-version: ${{ matrix.node }}
+      
+      - name: Install pnpm
+        uses: pnpm/action-setup@latest
+        with:
+          version: ${{ matrix.pnpm }}
+        id: pnpm-install
+      
+      - name: Get pnpm store directory
+        run: |
+          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+        shell: bash
+        id: pnpm-cache
+
+      - name: Setup pnpm cache
+        uses: actions/cache@v3
+        with:
+          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }} # referenced from prior steps id
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+      
+      - name: Install all dependencies with pnpm
+        run: pnpm install
+        working-directory: ${{env.working-directory}}
+      
+      - name: Invoke Nuxt Static Site Generation
+        run: npx nuxi generate
+        working-directory: ${{env.working-directory}}
+      
+      - name: Deploy # Pushes the files to a branch called "gh-pages" that will be used as deployment branch
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }} # automatically invoked
+          publish_dir: ./${{env.working-directory}}/dist # Nuxt export the statically generated files in the dist directory by default
+
+      
+          
+      
+
+      
+          
