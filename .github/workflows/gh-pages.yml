@@ -17,7 +17,7 @@ jobs:
       matrix:
         os: [ubuntu-latest]
         node: [latest]
-        pnpm: [latest]
+        pnpm: [8]
 
     runs-on: ${{ matrix.os }}
     permissions: 
