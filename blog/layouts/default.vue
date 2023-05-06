@@ -9,7 +9,7 @@
             class="inline-block font-extrabold text-transparent text-4xl bg-clip-text bg-gradient-to-r from-teal-500 to-red-500">
             {{ page.title }}
           </span>
-          <div v-if="page?.publishedOn || page?.lastUpdated" class="flex flex-col text-sm mt-5">
+          <div v-if="page?.publishedOn || page?.lastUpdated" class="flex flex-col text-sm text-xs text-gray-600 dark:text-gray-400 mt-5">
             <span v-if="page.publishedOn">Published on 
               <span class="text-teal-500">{{ page.publishedOn }}</span>
             </span>
