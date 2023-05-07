@@ -16,7 +16,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        node: [latest]
+        node: [19.9.0]
         pnpm: [6]
 
     runs-on: ${{ matrix.os }}
