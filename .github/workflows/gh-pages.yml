@@ -59,7 +59,7 @@ jobs:
         working-directory: ${{env.working-directory}}
       
       - name: Invoke Nuxt Static Site Generation
-        run: npx nuxi generate
+        run: npm run generate
         working-directory: ${{env.working-directory}}
       
       - name: Deploy # Pushes the files to a branch called "gh-pages" that will be used as deployment branch
