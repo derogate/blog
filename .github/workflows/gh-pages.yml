@@ -1,5 +1,5 @@
-name: Deploy to Github Pages
-run-name: ${{ github.actor }} is deploying to Github Pages
+name: Build & Deploy to Github Pages
+run-name: ${{ github.actor }} is building & deploying to Github Pages
 
 on: 
   push:
@@ -59,7 +59,7 @@ jobs:
         working-directory: ${{env.working-directory}}
       
       - name: Invoke Nuxt Static Site Generation
-        run: npm run generate
+        run: pnpm run generate
         working-directory: ${{env.working-directory}}
       
       - name: Deploy # Pushes the files to a branch called "gh-pages" that will be used as deployment branch
