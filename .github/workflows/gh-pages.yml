@@ -60,7 +60,7 @@ jobs:
       
       - name: Invoke Nuxt Static Site Generation
         run: pnpm run generate
-        working-directory: ${{env.working-directory}}
+        working-directory: ./${{env.working-directory}}
       
       - name: Deploy # Pushes the files to a branch called "gh-pages" that will be used as deployment branch
         uses: peaceiris/actions-gh-pages@v3
