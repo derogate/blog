@@ -1,1 +1,0 @@
-export default {data:{"navbar-navigation":[{title:"About",_path:"\u002Fabout",layout:"custom"},{title:"Document Driven",_path:"\u002F"}]},prerenderedAt:void 0}
