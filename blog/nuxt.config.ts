@@ -27,8 +27,5 @@ export default defineNuxtConfig({
         default: 'github-light'
       }
     }
-  },
-  experimental: {
-    inlineSSRStyles: false
   }
 })
