@@ -10,7 +10,6 @@ on:
 jobs:
   deploy:
     env:
-      # root folder to be referenced in this workflow
       working-directory: blog
     
     strategy:
@@ -33,6 +32,7 @@ jobs:
         uses: actions/setup-node@v3
         with: 
           node-version: ${{ matrix.node }}
+          cache: true
       
       - name: Install pnpm
         uses: pnpm/action-setup@v2
@@ -40,27 +40,13 @@ jobs:
           version: ${{ matrix.pnpm }}
         id: pnpm-install
       
-      - name: Get pnpm store directory
-        run: |
-          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
-        shell: bash
-        id: pnpm-cache
-
-      - name: Setup pnpm cache
-        uses: actions/cache@v3
-        with:
-          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }} # referenced from prior steps id
-          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pnpm-store-
-      
       - name: Install all dependencies with pnpm
         run: pnpm install
         working-directory: ${{env.working-directory}}
       
       - name: Invoke Nuxt Static Site Generation
         run: pnpm run generate
-        working-directory: ./${{env.working-directory}}
+        working-directory: ${{env.working-directory}}
       
       - name: Deploy # Pushes the files to a branch called "gh-pages" that will be used as deployment branch
         uses: peaceiris/actions-gh-pages@v3
