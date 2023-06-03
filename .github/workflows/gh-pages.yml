@@ -28,17 +28,17 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Install Node
-        uses: actions/setup-node@v3
-        with: 
-          node-version: ${{ matrix.node }}
-          cache: 'pnpm'
-      
       - name: Install pnpm
         uses: pnpm/action-setup@v2
         with:
           version: ${{ matrix.pnpm }}
         id: pnpm-install
+
+      - name: Install Node
+        uses: actions/setup-node@v3
+        with: 
+          node-version: ${{ matrix.node }}
+          cache: 'pnpm'
       
       - name: Install all dependencies with pnpm
         run: pnpm install
