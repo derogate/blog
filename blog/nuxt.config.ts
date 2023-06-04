@@ -14,6 +14,9 @@ export default defineNuxtConfig({
   css: [
     '@/assets/styles/globals.postcss'
   ],
+  app: {
+    baseURL: '/derogate.github.io/'
+  },
   colorMode: {
     preference: 'dark',
     fallback: 'dark',
