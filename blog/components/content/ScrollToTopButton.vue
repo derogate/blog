@@ -1,8 +1,9 @@
 <template>
   <Transition name="fade" mode="out-in">
     <button v-if="showBtn" @click="scrollToTop" 
-      class="sticky bottom-4 z-[1] ml-auto sm:-mr-4 flex p-2 rounded-full border group
-      transition bg-black/60 hover:border-teal-500 hover:ring-1 hover:ring-teal-500 hover:bg-black">
+      class="sticky bottom-4 z-[1] ml-auto sm:-mr-4 flex p-2 rounded-full border group transition 
+      bg-white/60 hover:bg-white border-gray-400
+      dark:bg-black/60 dark:hover:bg-black hover:border-teal-500 hover:ring-1 hover:ring-teal-500">
       <Icon name="line-md:arrow-up" class="group-hover:text-teal-500 transition duration-250 ease-in-out" />
     </button>
   </Transition>
