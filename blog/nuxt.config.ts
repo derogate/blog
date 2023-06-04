@@ -12,7 +12,7 @@ export default defineNuxtConfig({
     'nuxt-icon'
   ],
   css: [
-    '@/assets/styles/globals.css'
+    '@/assets/styles/index.css'
   ],
   app: {
     baseURL: '/blog/'

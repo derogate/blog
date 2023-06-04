@@ -1,0 +1,25 @@
+::-webkit-scrollbar {
+  /* the scrollbar. */
+  @apply w-[20px];
+}
+::-webkit-scrollbar-button {
+  /* the buttons on the scrollbar (arrows pointing upwards and downwards). */ 
+  @apply hidden;
+}
+:not(.dark)::-webkit-scrollbar-thumb {
+  /* the draggable scrolling handle. */ 
+  @apply bg-clip-padding bg-teal-800 rounded-lg border-transparent border-solid border-[5px];
+}
+
+::-webkit-scrollbar-track {
+  /* the track (progress bar) of the scrollbar. */ 
+}
+::-webkit-scrollbar-track-piece {
+  /* the track (progress bar) NOT covered by the handle. */ 
+}
+::-webkit-scrollbar-corner {
+  /* the bottom corner of the scrollbar, where both horizontal and vertical scrollbars meet. */ 
+}
+::-webkit-resizer {
+  /* the draggable resizing handle that appears at the bottom corner of some elements. */ 
+}
