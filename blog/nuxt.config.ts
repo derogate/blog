@@ -17,6 +17,7 @@ export default defineNuxtConfig({
   app: {
     baseURL: '/blog/'
   },
+  ssr: true,
   colorMode: {
     preference: 'dark',
     fallback: 'dark',
