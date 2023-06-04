@@ -24,25 +24,19 @@
 </template>
 
 <script lang="ts" setup>
-import { ParsedContent } from '@nuxt/content/dist/runtime/types';
-
 const isLoading = ref(true);
-const posts = ref<ParsedContent[]>();
 
-onMounted(async() => {
-  try {
-    posts.value = await queryContent("posts")
-      .where({
-        _empty: false,
-        _draft: false,
-      })
-      .sort({ publishedOn: -1, $numeric: true })
-      .sort({ lastUpdated: -1, $numeric: true })
-      .find();
-  } catch (error) {
-    console.log([error])
-  }
-
-  isLoading.value = false;
+const { data: posts } = await useAsyncData('posts', () => {
+  return queryContent("posts")
+    .where({
+      _empty: false,
+      _draft: false,
+    })
+    .sort({ publishedOn: -1, $numeric: true })
+    .sort({ lastUpdated: -1, $numeric: true })
+    .find();
 })
+
+isLoading.value = false;
+
 </script>
