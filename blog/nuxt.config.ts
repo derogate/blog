@@ -15,7 +15,7 @@ export default defineNuxtConfig({
     '@/assets/styles/globals.postcss'
   ],
   app: {
-    baseURL: '/derogate.github.io/'
+    baseURL: '/blog/'
   },
   colorMode: {
     preference: 'dark',
