@@ -8,7 +8,13 @@
 }
 ::-webkit-scrollbar-thumb {
   /* the draggable scrolling handle. */ 
-  @apply bg-clip-padding bg-teal-500 rounded-lg border-transparent border-solid border-[5px];
+  @apply bg-clip-padding bg-teal-500 rounded-lg;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-teal-400;
+}
+::-webkit-scrollbar-thumb:active {
+  @apply bg-teal-300;
 }
 
 ::-webkit-scrollbar-track {
