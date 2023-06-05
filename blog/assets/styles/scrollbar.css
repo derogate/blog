@@ -10,10 +10,6 @@
   /* the draggable scrolling handle. */ 
   @apply bg-clip-padding bg-teal-500 rounded-lg border-transparent border-solid border-[5px];
 }
-.dark ::-webkit-scrollbar-thumb {
-  /* the draggable scrolling handle dark mode. */ 
-  @apply bg-teal-800;
-}
 
 ::-webkit-scrollbar-track {
   /* the track (progress bar) of the scrollbar. */ 
@@ -26,4 +22,9 @@
 }
 ::-webkit-resizer {
   /* the draggable resizing handle that appears at the bottom corner of some elements. */ 
+}
+
+/* firefox scrollbar */
+* {
+  scrollbar-color: theme(backgroundColor.teal.500) transparent;
 }
